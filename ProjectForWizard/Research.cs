@@ -128,9 +128,6 @@ namespace ProjectForWizard
         //  First Test
         private void BeforeResearchTest()
         {
-            int NormalPersons = 0;
-            int NotNormalPersons = 0;
-
             if (optimizationValue == true)
             {
                 ForSumnumberOfTest = numberOfTest / numberOfParticipent;
@@ -154,13 +151,11 @@ namespace ProjectForWizard
                     {
                         if (p.StateOfMind == true)
                         {
-                            NormalPersons++;
                             p.BeforeEstimationArrayOfMarks.Add(r.Next(1, 5));
                             testsIsLeft--;
                         }
                         else if (p.StateOfMind == false)
                         {
-                            NotNormalPersons++;
                             p.BeforeEstimationArrayOfMarks.Add(r.Next(1, 3));
                             testsIsLeft--;
                         }
@@ -206,9 +201,6 @@ namespace ProjectForWizard
         //  Second Test
         private void AfterResearchTest()
         {
-            int NormalPersons = 0;
-            int NotNormalPersons = 0;
-
             if (optimizationValue == true)
             {
                 ForSumnumberOfTest = numberOfTest / numberOfParticipent;
@@ -234,13 +226,11 @@ namespace ProjectForWizard
 
                         if (p.StateOfMind == true)
                         {
-                            NormalPersons++;
                             p.AfterEstimationArrayOfMarks.Add(r.Next(2, 5));
                             testsIsLeft--;
                         }
                         else if (p.StateOfMind == false)
                         {
-                            NotNormalPersons++;
                             p.AfterEstimationArrayOfMarks.Add(r.Next(1, 5));
                             testsIsLeft--;
                         }
