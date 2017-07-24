@@ -1,0 +1,142 @@
+﻿<Window x:Class="ProjectForWizard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectForWizard"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Wizard project" Height="476.5" MinWidth="843" MinHeight="476.5" WindowStartupLocation="CenterScreen" Width="843">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="validationFailed">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Red" BorderThickness="1">
+                    <AdornedElementPlaceholder />
+                </Border>
+                <TextBlock Margin="1,0,0,0" Foreground="Red" FontSize="14" FontWeight="Bold">!</TextBlock>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Label Content="Number of participent (items)" Margin="2" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="txtNumberOfParticipent" Grid.Row="1" Grid.Column="0" Margin="5"
+                 Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="numberOfPForError">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Content="Number of test (items)" Margin="2" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtNumberOfTest" Grid.Row="3" Grid.Column="0" Margin="5"
+                 Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="numberOfTForError">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Content="Work schedule: " Margin="2" Grid.Row="4"/>
+        <Label Content="From (hour): " Margin="2" Grid.Row="5"/>
+        <TextBox Name="workTimeFrom" Grid.Row="5" Grid.Column="1" Margin="5" Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="workTimeFromForError">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <CheckBox x:Name="optimizationCheckBox" IsChecked = "True" Content="Research work optimization" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,10,0"/>
+        <Label Content="Dinner (hour): " Margin="2" Grid.Row="6" Grid.Column="0"/>
+        <TextBox Name="dinnerTime" Grid.Row="6" Grid.Column="1" Margin="5" Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="dinnerTimeForError">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule  />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Content="To (hour): " Margin="2" Grid.Row="7" Grid.Column="0"/>
+        <TextBox Name="workTimeTo" Grid.Row="7" Grid.Column="1" Margin="5" Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="workTimeToForError">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+
+        <Label Content="Rest interval between sets (minutes)" Grid.Column="1" Margin="2"/>
+        <TextBox Name="breakRestTime" Grid.Column="1" Grid.Row="1" Margin="5" Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="breakRestTimeForError">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+
+        <Label Content="Time interval for one test (minutes)" Grid.Column="1" Grid.Row="2"  Margin="2"/>
+        <TextBox Name="TimeForOneTest" Grid.Column="1" Grid.Row="3" Margin="5" Validation.ErrorTemplate="{StaticResource validationFailed}">
+            <TextBox.Text>
+                <Binding Path="TimeForOneTestForError">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Button Content="Submit" Click="Button_Click" Margin="10,10,10,-157" Grid.Row="8" />
+        <Label x:Name="Text_BeforeResearch" FontWeight="Bold" Content="Result: " Grid.Row="8" Margin="10,10,10,-157" Grid.Column="1"/>
+        <ListView Name="resultList" ItemsSource="{DynamicResource ResourceKey=persons}" Grid.Column="2" Height="228" Margin="10,10,10,0" Grid.RowSpan="8" VerticalAlignment="Top" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="105" DisplayMemberBinding="{Binding Path=Name}">Name</GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Path=StateOfMind}">State</GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Path=BeforeSumOfTheAverageMark}">First Mark</GridViewColumn>
+                    <GridViewColumn Width="90" DisplayMemberBinding="{Binding Path=AfterSumOfTheAverageMark}">Second Mark</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <col:ArrayList x:Key="persons"/>
+            </ListView.Resources>
+        </ListView>
+        <Label x:Name="Text_AfterResearch" FontWeight="Bold" Content="Result: " Grid.Row="8" Margin="10,10,10,-157" Grid.Column="2"/>
+
+    </Grid>
+</Window>

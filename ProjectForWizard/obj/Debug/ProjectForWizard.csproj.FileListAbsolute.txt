@@ -1,0 +1,14 @@
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\bin\Debug\ProjectForWizard.exe.config
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\bin\Debug\ProjectForWizard.exe
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\bin\Debug\ProjectForWizard.pdb
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard.csprojResolveAssemblyReference.cache
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\MainWindow.g.cs
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\App.g.cs
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard_MarkupCompile.cache
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard_MarkupCompile.lref
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\MainWindow.baml
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard.g.resources
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard.Properties.Resources.resources
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard.csproj.GenerateResource.Cache
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard.exe
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Debug\ProjectForWizard.pdb

@@ -1,0 +1,13 @@
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\bin\Release\ProjectForWizard.exe.config
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\bin\Release\ProjectForWizard.exe
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\bin\Release\ProjectForWizard.pdb
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\MainWindow.g.cs
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\App.g.cs
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard_MarkupCompile.cache
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard_MarkupCompile.lref
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\MainWindow.baml
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.g.resources
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.Properties.Resources.resources
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.csproj.GenerateResource.Cache
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.exe
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.pdb
