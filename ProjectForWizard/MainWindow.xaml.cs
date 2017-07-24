@@ -85,8 +85,6 @@ namespace ProjectForWizard
                 {
                     Name = "Time:",
                     StateOfMind = research.DateTime.ToString("dd.MM.yyyy")
-                    //BeforeSumOfTheAverageMark = research.DateTime.Month,
-                    //AfterSumOfTheAverageMark = research.DateTime.Year
                 });
                 ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView(){});
 
