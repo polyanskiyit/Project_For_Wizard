@@ -47,13 +47,13 @@ namespace ProjectForWizard
                         }
                         break;
                     case "workTimeFromForError":
-                        if ((workTimeFromForError <= 0) || (workTimeFromForError >= 10000000) && (workTimeFromForError > dinnerTimeForError))
+                        if ((dinnerTimeForError < workTimeFromForError) || (workTimeFromForError <= 0) || (workTimeFromForError >= 10000000))
                         {
                             error = errorText;
                         }
                         break;
                     case "dinnerTimeForError":
-                        if ((workTimeFromForError > dinnerTimeForError) || (dinnerTimeForError > workTimeToForError) || (workTimeFromForError <= 0) || (workTimeFromForError >= 10000000))
+                        if ((workTimeFromForError > dinnerTimeForError) || (dinnerTimeForError > workTimeToForError) || (dinnerTimeForError <= 0) || (dinnerTimeForError >= 10000000))
                         {
                             error = errorText;
                         }

@@ -6,7 +6,9 @@ namespace ProjectForWizard
 {
     public partial class MainWindow : Window
     {
-        private Research research;
+        private ResearchBeforeConsumingPotions researchBeforeConsumingPotions;
+        private ResearchAfterConsumingPotions researchAfterConsumingPotions;
+
         private ErrorHelper errorHelper;
         private int researshNumber;
 
@@ -15,55 +17,44 @@ namespace ProjectForWizard
             InitializeComponent();
 
             researshNumber = 0;
+
             //  for errors  
             errorHelper = new ErrorHelper();
             DataContext = errorHelper;
         }
-        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //  Values for validation of the input parameters
-            int res;
-            bool boolNumberOfParticipent = Int32.TryParse(txtNumberOfParticipent.Text, out res);
-            bool boolNumberOfTest = Int32.TryParse(txtNumberOfTest.Text, out res);
-            bool boolWorkTimeFrom = Int32.TryParse(workTimeFrom.Text, out res);
-            bool boolDinnerTime = Int32.TryParse(dinnerTime.Text, out res);
-            bool boolWorkTimeTo = Int32.TryParse(workTimeTo.Text, out res);
-            bool boolbreakRestTime = Int32.TryParse(breakRestTime.Text, out res);
-            bool boolTimeForOneTest = Int32.TryParse(TimeForOneTest.Text, out res);
-
-            if (
-                boolNumberOfParticipent == true &&
-                boolNumberOfTest == true &&
-                boolbreakRestTime == true &&
-                boolTimeForOneTest == true &&
-
-                boolWorkTimeFrom == true &&
-                boolDinnerTime == true &&
-                boolWorkTimeTo == true &&
-
-                Convert.ToInt32(workTimeTo.Text) > Convert.ToInt32(dinnerTime.Text) &&
-                Convert.ToInt32(dinnerTime.Text) > Convert.ToInt32(workTimeFrom.Text) &&
-
-                Convert.ToInt32(workTimeTo.Text) < 23 &&
-                Convert.ToInt32(txtNumberOfParticipent.Text) > 0 && Convert.ToInt32(txtNumberOfParticipent.Text) < 10000000 &&
-                Convert.ToInt32(txtNumberOfTest.Text) > 0 && Convert.ToInt32(txtNumberOfTest.Text) < 10000000 &&
-                Convert.ToInt32(workTimeFrom.Text) > 0 && Convert.ToInt32(workTimeFrom.Text) < 1440 &&
-                Convert.ToInt32(breakRestTime.Text) > 0 && Convert.ToInt32(breakRestTime.Text) < 1440 &&
-                Convert.ToInt32(TimeForOneTest.Text) > 0 && Convert.ToInt32(TimeForOneTest.Text) < 1440 
-                )
+            if (Validator.DataValidator(txtNumberOfParticipent, txtNumberOfTest, breakRestTime, TimeForOneTest, workTimeFrom, dinnerTime, workTimeTo, optimizationCheckBox))
             {
-                research = new Research(txtNumberOfParticipent, txtNumberOfTest, breakRestTime, TimeForOneTest, workTimeFrom, dinnerTime, workTimeTo, optimizationCheckBox);
+                researchBeforeConsumingPotions = new ResearchBeforeConsumingPotions(txtNumberOfParticipent, txtNumberOfTest, breakRestTime, TimeForOneTest, workTimeFrom, dinnerTime, workTimeTo, optimizationCheckBox);
 
-                Text_BeforeResearch.Content = research.ResearchMethod();
-                Text_AfterResearch.Content = research.AfterResearchMethod();
+                researchAfterConsumingPotions = new ResearchAfterConsumingPotions(txtNumberOfParticipent, txtNumberOfTest, breakRestTime, TimeForOneTest, workTimeFrom, dinnerTime, workTimeTo, optimizationCheckBox);
+                
+
+
+                //  print Results
+                Text_BeforeResearch.Content = researchBeforeConsumingPotions.ResearchMethod();
+
+                Text_AfterResearch.Content = researchAfterConsumingPotions.ResearchMethod()
+                    + $"\n\nTime for Research:\n" +
+                    $"Days: {AbstractResearch.DateTime.Day}; " +
+                    $"Month: {AbstractResearch.DateTime.Month}; " +
+                    $"Years: {AbstractResearch.DateTime.Year}.";
+
+
+                for (int i = 0; i < researchBeforeConsumingPotions.ListOfPersons.Count && i < researchAfterConsumingPotions.ListOfPersons.Count; i++)
+                {
+                    researchBeforeConsumingPotions.ListOfPersons[i].AfterSumOfTheAverageMark = researchAfterConsumingPotions.ListOfPersons[i].AfterSumOfTheAverageMark;
+                }
+
 
                 ////  Print Collections 'ListOfPersons' in the 'ListView'
                 //  Tilte
-                ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView() {Name = "Test №" + ++researshNumber });
-                
+                ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView() { Name = "Test №" + ++researshNumber });
+
                 //  List
-                foreach (var i in research.ListOfPersons)
+                foreach (var i in researchBeforeConsumingPotions.ListOfPersons)
                 {
                     ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView()
                     {
@@ -78,15 +69,15 @@ namespace ProjectForWizard
                 ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView()
                 {
                     Name = "Average mark",
-                    BeforeSumOfTheAverageMark = research.BeforeMaxAverageMark().BeforeSumOfTheAverageMark,
-                    AfterSumOfTheAverageMark = research.AfterMaxAverageMark().AfterSumOfTheAverageMark
+                    BeforeSumOfTheAverageMark = researchBeforeConsumingPotions.MaxAverageMark().BeforeSumOfTheAverageMark,
+                    AfterSumOfTheAverageMark = researchAfterConsumingPotions.MaxAverageMark().AfterSumOfTheAverageMark
                 });
                 ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView()
                 {
                     Name = "Time:",
-                    StateOfMind = research.DateTime.ToString("dd.MM.yyyy")
+                    StateOfMind = AbstractResearch.DateTime.ToString("dd.MM.yyyy")
                 });
-                ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView(){});
+                ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView() { });
 
                 resultList.Items.Refresh();
             }
@@ -95,5 +86,6 @@ namespace ProjectForWizard
                 MessageBox.Show("Error");
             }
         }
+
     }
 }

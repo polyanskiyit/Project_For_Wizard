@@ -54,10 +54,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AbstractResearch.cs" />
     <Compile Include="ErrorHelper.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Research.cs" />
     <Compile Include="PersonForResultListView.cs" />
+    <Compile Include="ResearchAfterConsumingPotions.cs" />
+    <Compile Include="ResearchBeforeConsumingPotions.cs" />
+    <Compile Include="Validator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

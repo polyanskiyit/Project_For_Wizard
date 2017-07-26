@@ -68,7 +68,7 @@
             <TextBox.Text>
                 <Binding Path="workTimeFromForError">
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <DataErrorValidationRule/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -91,7 +91,7 @@
             <TextBox.Text>
                 <Binding Path="workTimeToForError">
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <DataErrorValidationRule />
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -103,7 +103,7 @@
             <TextBox.Text>
                 <Binding Path="breakRestTimeForError">
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <DataErrorValidationRule />
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -115,7 +115,7 @@
             <TextBox.Text>
                 <Binding Path="TimeForOneTestForError">
                     <Binding.ValidationRules>
-                        <ExceptionValidationRule />
+                        <DataErrorValidationRule />
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
