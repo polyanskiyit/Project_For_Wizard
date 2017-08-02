@@ -10,9 +10,8 @@ namespace ProjectForWizard
         public ResearchAfterConsumingPotions(TextBox txtNumberOfParticipent, TextBox txtNumberOfTest, TextBox breakRestTime, TextBox TimeForOneTest, TextBox workTimeFrom, TextBox dinnerTime, TextBox workTimeTo, CheckBox optimizationCheckBox) : base(txtNumberOfParticipent, txtNumberOfTest, breakRestTime, TimeForOneTest, workTimeFrom, dinnerTime, workTimeTo, optimizationCheckBox)
         {
             Init();//  Initialization
-            //asdasd
             third = 5;
-
+            //sadas
             InputParameters();
         }
 
