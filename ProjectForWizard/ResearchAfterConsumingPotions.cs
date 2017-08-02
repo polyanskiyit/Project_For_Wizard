@@ -12,6 +12,8 @@ namespace ProjectForWizard
             Init();//  Initialization
             third = 5;
 
+            //12_2
+
             InputParameters();
         }
 
