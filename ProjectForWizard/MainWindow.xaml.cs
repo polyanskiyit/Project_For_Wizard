@@ -43,9 +43,9 @@ namespace ProjectForWizard
                     $"Years: {AbstractResearch.DateTime.Year}.";
 
 
-                for (int i = 0; i < researchBeforeConsumingPotions.ListOfPersons.Count && i < researchAfterConsumingPotions.ListOfPersons.Count; i++)
+                for (int i = 0; i <  AbstractResearch.ListOfPersons.Count && i < AbstractResearch.ListOfPersons.Count; i++)
                 {
-                    researchBeforeConsumingPotions.ListOfPersons[i].AfterSumOfTheAverageMark = researchAfterConsumingPotions.ListOfPersons[i].AfterSumOfTheAverageMark;
+                    AbstractResearch.ListOfPersons[i].AfterSumOfTheAverageMark = AbstractResearch.ListOfPersons[i].AfterSumOfTheAverageMark;
                 }
 
 
@@ -54,7 +54,7 @@ namespace ProjectForWizard
                 ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView() { Name = "Test №" + ++researshNumber });
 
                 //  List
-                foreach (var i in researchBeforeConsumingPotions.ListOfPersons)
+                foreach (var i in AbstractResearch.ListOfPersons)
                 {
                     ((ArrayList)resultList.Resources["persons"]).Add(new PersonForResultListView()
                     {

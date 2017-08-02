@@ -61,6 +61,7 @@
     <Compile Include="PersonForResultListView.cs" />
     <Compile Include="ResearchAfterConsumingPotions.cs" />
     <Compile Include="ResearchBeforeConsumingPotions.cs" />
+    <Compile Include="SetOfParticipents.cs" />
     <Compile Include="Validator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -9,7 +9,7 @@ namespace ProjectForWizard
 {
     public abstract class AbstractResearch
     {
-        public List<Person> ListOfPersons { get; set; }
+        public static List<Person> ListOfPersons { get; set; }
 
         protected TextBox
             txtNumberOfParticipent,
@@ -62,7 +62,6 @@ namespace ProjectForWizard
         }
 
         protected abstract void Init();
-        protected abstract void SetOfParticipents();
         protected abstract void InputParameters();
 
         protected abstract void ResearchTest();

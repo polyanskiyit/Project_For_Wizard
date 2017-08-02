@@ -1,23 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace ProjectForWizard
 {
     public class ResearchAfterConsumingPotions : AbstractResearch
     {
+        private int third;
+
         public ResearchAfterConsumingPotions(TextBox txtNumberOfParticipent, TextBox txtNumberOfTest, TextBox breakRestTime, TextBox TimeForOneTest, TextBox workTimeFrom, TextBox dinnerTime, TextBox workTimeTo, CheckBox optimizationCheckBox) : base(txtNumberOfParticipent, txtNumberOfTest, breakRestTime, TimeForOneTest, workTimeFrom, dinnerTime, workTimeTo, optimizationCheckBox)
         {
             Init();//  Initialization
+            //asdasd
+            //    sadsa
+            third = 5;
+
             InputParameters();
-            SetOfParticipents();//  Generation of the Participents
         }
 
         protected override void Init()
         {
             DateTime = new DateTime();
             r = new Random();
-            ListOfPersons = new List<Person>();
         }
         protected override void InputParameters()
         {
@@ -42,27 +45,6 @@ namespace ProjectForWizard
             ////  Time for one test and one pause
             timeForOneParticipent = pausa + testTime;
         }
-        protected override void SetOfParticipents()
-        {
-            int PersonNumber = 1;
-            for (int i = 0; i < numberOfParticipent; i++)
-            {
-                Person p = new Person();
-                p.Name = "Participent №" + (PersonNumber++);
-                p.AfterEstimationArrayOfMarks = new List<int>();
-
-                if (r.Next(2) == 1)
-                {
-                    p.StateOfMind = false;
-                }
-                else
-                {
-                    p.StateOfMind = true;
-                }
-
-                ListOfPersons.Add(p);
-            }
-        }
 
         protected override void ResearchTest()
         {
@@ -85,6 +67,7 @@ namespace ProjectForWizard
                     if (DateTime.Hour >= timeFrom &&
                         DateTime.Hour != dinner &&
                         DateTime.Hour <= timeTo &&
+                        DateTime.Hour <= timeTo - third &&
                         DateTime.Day != 6 && DateTime.Day != 7)
                     {
                         if (p.StateOfMind == true)
