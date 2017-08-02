@@ -11,7 +11,6 @@ namespace ProjectForWizard
         {
             Init();//  Initialization
             //asdasd
-            //    sadsa
             third = 5;
 
             InputParameters();
