@@ -15,8 +15,8 @@ namespace ProjectForWizard
 
             //  Test Assembly release _2 (1.0.0.1)
 
-            //  Test 05 08  I
-            //  Test 05 08  II
+            //  Test 05 08  __ I
+            //  Test 05 08  __ II
 
 
             //12_3222
