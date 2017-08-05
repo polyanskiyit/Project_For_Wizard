@@ -12,7 +12,15 @@ namespace ProjectForWizard
             Init();//  Initialization
             third = 5;
 
+
+            //  Test Assembly release _2 (1.0.0.1)
+
+            //  05 08  
+
+
             //12_3222
+
+
 
             InputParameters();
         }

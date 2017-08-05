@@ -11,3 +11,4 @@ C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard
 C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.csproj.GenerateResource.Cache
 C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.exe
 C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.pdb
+C:\C-Sharp-Course\ProjectForWizard\ProjectForWizard\obj\Release\ProjectForWizard.csprojResolveAssemblyReference.cache
