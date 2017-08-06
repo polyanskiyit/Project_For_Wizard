@@ -36,6 +36,7 @@ namespace ProjectForWizard
 
             //  13:14
             //  Test 06 08  __ VII
+            //  Test 06 08  __ VIII реліз коміт
 
 
 
