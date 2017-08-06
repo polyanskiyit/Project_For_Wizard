@@ -34,6 +34,12 @@ namespace ProjectForWizard
             //  12:29
             //  Test 06 08  __ VI
 
+            //  13:14
+            //  Test 06 08  __ VII
+
+
+
+
             //string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             //Trace.WriteLine(assemblyVersion);
 
