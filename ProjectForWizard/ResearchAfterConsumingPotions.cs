@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Reflection;
 using System.Windows.Controls;
 
 namespace ProjectForWizard
@@ -15,6 +17,7 @@ namespace ProjectForWizard
 
             //  Test Assembly release _2 (1.0.0.1)
 
+            // Session I
             //  14:00
             //  Test 05 08  __ I
             //  Test 05 08  __ II
@@ -26,6 +29,13 @@ namespace ProjectForWizard
             //  0:00
             //  Test 05 08  __ V
 
+
+            // Session II
+            //  12:29
+            //  Test 06 08  __ VI
+
+            string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            Trace.WriteLine(assemblyVersion);
 
             //12_3222
 
