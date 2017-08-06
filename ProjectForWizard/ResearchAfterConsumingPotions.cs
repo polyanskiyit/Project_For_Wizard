@@ -39,6 +39,9 @@ namespace ProjectForWizard
             //  Test 06 08  __ VIII реліз коміт
 
 
+            //  15:13
+            //  Test 06 08  __ VIII провіка бугого комента версії 1.0.0.5
+
 
 
             //string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
